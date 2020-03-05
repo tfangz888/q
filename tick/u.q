@@ -4,6 +4,8 @@
 
 \d .u
 init:{w::t!(count t::tables`.)#()}
+/ tables`.  列出表   tables[]     \a    system "a"
+/ w为以表名为key的dict
 
 del:{w[x]_:w[x;;0]?y};.z.pc:{del[;x]each t};
 

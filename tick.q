@@ -21,7 +21,7 @@
 
 /q tick.q [schema] [destination directory] [-t N] -p 5010
 /q tick.q sym ./hdb -t 1000 -p 5010
-/schema 表结构  
+/schema 表结构
 /-t 时间不设置就会立即执行publicsh
 
 /q tick.q SRC [DST] [-p 5010] [-o h]

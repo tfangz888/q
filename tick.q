@@ -41,7 +41,7 @@ if[not system"p";system"p 5010"]
 ld:{if[not type key L::`$(-10_string L),string x;.[L;();:;()]];
     i::j::-11!(-2;L);  
 	if[0<=type i;-2 (string L)," is a corrupt log. Truncate to length ",(string last i)," and restart";exit 1];  
-	hopen L};
+	hopen L}; /打开日志文件
 tick:{init[];  
       if[not min(`time`sym~2#key flip value@)each t;'`timesym];   
 	  @[;`sym;`g#]each t;    
@@ -50,7 +50,7 @@ tick:{init[];
 / 10#"." 重复10次.   结果为`:./log/sym..........
 
 
-endofday:{end d;d+:1;if[l;hclose l;l::0(`.u.ld;d)]};
+endofday:{end d;d+:1;if[l;hclose l;l::0(`.u.ld;d)]}; / 向订阅者发送消息`.u.end, 关闭并打开日志文件
 ts:{if[d<x;if[d<x-1;system"t 0";'"more than one day?"];endofday[]]};
 
 if[system"t";
